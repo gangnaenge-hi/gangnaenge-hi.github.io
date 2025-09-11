@@ -1,6 +1,15 @@
 [
   
   {
+    "title": "JavaScript 란 무엇인가",
+    "url": "/posts/javascript-001/",
+    "categories": "Blogging, Javascript",
+    "tags": "Javascript",
+    "date": "2025-06-01 20:55:00 +0800",
+    "content": ""
+  },
+  
+  {
     "title": "Customize the Favicon",
     "url": "/posts/customize-the-favicon/",
     "categories": "Blogging, Tutorial",

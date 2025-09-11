@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Yell's Devlog</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2025-09-11T12:05:31+08:00</updated>
+  <updated>2025-09-11T13:54:30+08:00</updated>
   <author>
     <name>your_full_name</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,32 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>JavaScript 란 무엇인가</title>
+    <link href="http://localhost:4000/posts/javascript-001/" rel="alternate" type="text/html" title="JavaScript 란 무엇인가" />
+    <published>2025-06-01T20:55:00+08:00</published>
+  
+    <updated>2025-06-01T20:55:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/javascript-001/</id>
+    <content type="text/html" src="http://localhost:4000/posts/javascript-001/" />
+    <author>
+      <name>yell</name>
+    </author>
+
+  
+    
+    <category term="Blogging" />
+    
+    <category term="Javascript" />
+    
+  
+
+  <summary></summary>
+
+  </entry>
 
   
   <entry>

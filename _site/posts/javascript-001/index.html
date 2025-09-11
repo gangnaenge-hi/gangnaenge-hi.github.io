@@ -30,23 +30,26 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="Yell’s Devlog" />
+<meta property="og:title" content="JavaScript 란 무엇인가" />
+<meta name="author" content="Yerin Kim" />
 <meta property="og:locale" content="en" />
 <meta name="description" content="A minimal, responsive and feature-rich Jekyll theme for technical writing." />
 <meta property="og:description" content="A minimal, responsive and feature-rich Jekyll theme for technical writing." />
-<link rel="canonical" href="http://localhost:4000/" />
-<meta property="og:url" content="http://localhost:4000/" />
+<link rel="canonical" href="http://localhost:4000/posts/javascript-001/" />
+<meta property="og:url" content="http://localhost:4000/posts/javascript-001/" />
 <meta property="og:site_name" content="Yell’s Devlog" />
-<meta property="og:type" content="website" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-06-01T20:55:00+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Yell’s Devlog" />
+<meta property="twitter:title" content="JavaScript 란 무엇인가" />
 <meta name="twitter:site" content="@twitter_username" />
+<meta name="twitter:creator" content="@Yerin Kim" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"Yell’s Devlog","name":"your_full_name","sameAs":["https://twitter.com/username","https://github.com/username"],"url":"http://localhost:4000/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yerin Kim","url":"https://github.com/gangnaenge-hi/"},"dateModified":"2025-06-01T20:55:00+08:00","datePublished":"2025-06-01T20:55:00+08:00","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"JavaScript 란 무엇인가","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/javascript-001/"},"url":"http://localhost:4000/posts/javascript-001/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>Yell's Devlog
+  <title>JavaScript 란 무엇인가 | Yell's Devlog
   </title>
 
   <!--
@@ -110,11 +113,16 @@
   <!-- 3rd-party Dependencies -->
 
   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.32.2/dist/tocbot.min.css">
+  
 
   
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.min.css">
   
 
+  
+    <!-- Image Popup -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css">
   
 
   <!-- Scripts -->
@@ -133,6 +141,9 @@
   
 
   
+    <!-- image lazy-loading & popup & clipboard -->
+    
+  
 
 
 
@@ -190,9 +201,30 @@
 
   
 
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -200,11 +232,15 @@
 
 
 
-<script defer src="/assets/js/dist/home.min.js"></script>
+<script defer src="/assets/js/dist/post.min.js"></script>
 
 
 
 <!-- Pageviews -->
+
+  
+
+  
 
 
 
@@ -230,7 +266,7 @@
   <nav class="flex-column flex-grow-1 w-100 ps-0">
     <ul class="nav">
       <!-- home -->
-      <li class="nav-item active">
+      <li class="nav-item">
         <a href="/" class="nav-link">
           <i class="fa-fw fas fa-home"></i>
           <span>HOME</span>
@@ -392,9 +428,23 @@
       
 
       
-        <!-- index page -->
-        <span>Home</span>
+        
+          
+            <span>
+              <a href="/">Home</a>
+            </span>
 
+          
+        
+          
+        
+          
+            
+              <span>JavaScript 란 무엇인가</span>
+            
+
+          
+        
       
     </nav>
     <!-- endof #breadcrumb -->
@@ -404,7 +454,7 @@
     </button>
 
     <div id="topbar-title">
-      Yell's Devlog
+      Post
     </div>
 
     <button type="button" id="search-trigger" class="btn btn-link" aria-label="Search">
@@ -496,14 +546,6 @@
 
       
     
-      
-
-      
-      
-      
-
-      
-    
 
     <!-- take out classes -->
     
@@ -517,25 +559,22 @@
 
     
       
-      
-
-      
-
-      <!-- add image placeholder -->
-      
-
     
 
     <!-- lazy-load images -->
     
 
     
-      <!-- create the image wrapper -->
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
       
 
       
-      
+        <!-- create the image wrapper -->
+        
 
+        
+        
+      
     
 
     <!-- combine -->
@@ -564,6 +603,38 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
@@ -588,40 +659,19 @@
 
 
 
-<!-- Get pinned posts on current page -->
 
+<article class="px-1" data-toc="true">
+  <header>
+    <h1 data-toc-skip>JavaScript 란 무엇인가</h1>
+    
+      <p class="post-desc fw-light mb-4"></p>
+    
 
-
-
-
-
-<!-- Get normal posts on current page -->
-
-
-
-
-
-<div id="post-list" class="flex-grow-1 px-xl-1">
-  
-    <article class="card-wrapper card">
-      <a href="/posts/javascript-001/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">JavaScript 란 무엇인가</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p></p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
+    <div class="post-meta text-muted">
+      <!-- published date -->
+      <span>
+        Posted
+        <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -634,289 +684,327 @@
   data-ts="1748782500"
   data-df="ll"
   
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
 >
   Jun  1, 2025
 </time>
 
+      </span>
 
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Blogging,
-                      Javascript
-                  </span>
-                
-              </div>
+      <!-- lastmod date -->
+      
 
+      
+
+      <div class="d-flex justify-content-between">
+        <!-- author(s) -->
+        <span>
+          
+
+          By
+
+          <em>
+            
               
-                <div class="pin ms-1">
-                  <i class="fas fa-thumbtack fa-fw"></i>
-                  <span></span>
-                </div>
+                <a href="https://github.com/gangnaenge-hi/">Yerin Kim</a>
+                
               
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/getting-started/" class="post-preview row g-0 flex-md-row-reverse">
-        
+            
+          </em>
+        </span>
 
-        
+        <div>
+          <!-- pageviews -->
+          
 
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Getting Started</h1>
+          <!-- read time -->
+          <!-- Calculate the post's reading time, and display the word count in tooltip -->
 
-            <div class="card-text content mt-0 mb-3">
-              <p>Get started with Chirpy basics in this comprehensive overview. You will learn how to install, configure, and use your first Chirpy-based website, as well as deploy it to a web server.</p>
-            </div>
 
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
+
+<!-- words per minute -->
 
 
 
 
-<time
-  
-  data-ts="1565355300"
-  data-df="ll"
-  
+
+
+
+
+
+
+<!-- return element -->
+<span
+  class="readtime"
+  data-bs-toggle="tooltip"
+  data-bs-placement="bottom"
+  title="633 words"
 >
-  Aug  9, 2019
-</time>
+  <em>3 min</em> read</span>
 
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Blogging,
-                      Tutorial
-                  </span>
-                
-              </div>
-
-              
-                <div class="pin ms-1">
-                  <i class="fas fa-thumbtack fa-fw"></i>
-                  <span></span>
-                </div>
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
         </div>
+      </div>
+    </div>
+  </header>
+
+  
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">JavaScript 란 무엇인가</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">JavaScript 란 무엇인가</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
+
+  <div class="content">
+    <h1 id="javascript-란-무엇인가">JavaScript 란 무엇인가</h1>
+
+<blockquote>
+  <p>JavaScript is a dynamic, weakly typed programming language which is compiled at
+runtime. It can be executed as part of a webpage in a browser or directly on any
+machine (“host environment”).</p>
+
+</blockquote>
+
+<blockquote>
+  <p>JavaScript was created to make webpages more dynamic (e.g. change content on a
+page directly from inside the browser). Originally, it was called LiveScript but due to
+the popularity of Java, it was renamed to JavaScript.</p>
+
+</blockquote>
+
+<ul>
+  <li>런타임에 컴파일되는 동적 약형 프로그래밍 언어
+    <ul>
+      <li>기본적으로 인터프리터 언어이나 현대 JavaScript 엔진은 성능 향상을 위해 컴파일 과정을 포함</li>
+    </ul>
+  </li>
+  <li>브라우저 내에서 페이지의 내용을 직접 변경하기 위해 만들어짐</li>
+  <li>과거에 HTML 만 사용했을 때 보다 동적으로 동작 가능</li>
+</ul>
+
+<h3 id="실행-과정"><span class="me-2">실행 과정</span><a href="#실행-과정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>브라우저의 JavaScript 엔진을 통해 컴파일</li>
+  <li>모든 작업은 단일 스레드에서 실행됨</li>
+</ul>
+
+<p><a href="https://cdn.jsdelivr.net/gh/gangnaenge-hi/gangnaenge-hi.github.io/posts/20180809/assets/img/javascript/001_1.png" class="popup img-link shimmer"><img src="https://cdn.jsdelivr.net/gh/gangnaenge-hi/gangnaenge-hi.github.io/posts/20180809/assets/img/javascript/001_1.png" alt="image.png" loading="lazy"></a></p>
+
+<ul>
+  <li>동적, 인터프리터 언어 + 약형 프로그래밍 언어</li>
+  <li>C와 C++ 같이 미리 컴파일 하지 않고, 런타임에 평가되고 실행됨</li>
+</ul>
+
+<h3 id="실행-환경"><span class="me-2">실행 환경</span><a href="#실행-환경" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>구분</th>
+      <th>브라우저 JavaScript</th>
+      <th>Node.js</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>실행 환경</strong></td>
+      <td>브라우저(Chrome, Firefox, Safari 등)</td>
+      <td>서버/로컬 환경 (V8 엔진 기반)</td>
+    </tr>
+    <tr>
+      <td><strong>주 용도</strong></td>
+      <td>웹 페이지 동작, DOM 조작, UI 이벤트 처리</td>
+      <td>서버 개발, 파일 처리, 네트워크 통신, CLI 툴</td>
+    </tr>
+    <tr>
+      <td><strong>API 제공</strong></td>
+      <td>DOM, BOM, fetch API, localStorage 등 브라우저 전용 API</td>
+      <td>파일 시스템(fs), 네트워크(http, net), OS 모듈 등 서버 전용 API</td>
+    </tr>
+    <tr>
+      <td><strong>글로벌 객체</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">window</code></td>
+      <td><code class="language-plaintext highlighter-rouge">global</code></td>
+    </tr>
+    <tr>
+      <td><strong>모듈 시스템</strong></td>
+      <td>ES Modules(<code class="language-plaintext highlighter-rouge">import/export</code>) 기본 지원</td>
+      <td>CommonJS(<code class="language-plaintext highlighter-rouge">require/module.exports</code>) 기본, ES Modules도 지원</td>
+    </tr>
+    <tr>
+      <td><strong>보안 제한</strong></td>
+      <td>샌드박스 환경(파일 시스템 접근 불가)</td>
+      <td>로컬 파일, 네트워크, OS 접근 가능</td>
+    </tr>
+    <tr>
+      <td><strong>멀티스레드</strong></td>
+      <td>기본적으로 싱글 스레드 (Web Workers로 확장 가능)</td>
+      <td>싱글 스레드 이벤트 루프, 필요 시 Worker Threads 사용</td>
+    </tr>
+    <tr>
+      <td><strong>패키지 관리</strong></td>
+      <td>없음 (외부 스크립트 직접 로드)</td>
+      <td><code class="language-plaintext highlighter-rouge">npm</code> 또는 <code class="language-plaintext highlighter-rouge">yarn</code>으로 라이브러리 관리</td>
+    </tr>
+    <tr>
+      <td><strong>실시간 처리</strong></td>
+      <td>WebSocket, EventSource 사용</td>
+      <td>WebSocket, TCP/UDP, 실시간 스트리밍 가능</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<p>표준 명세</p>
+
+<ul>
+  <li>ECMAScript 는 JavaScript 의 표준 명세</li>
+  <li>여러 브라우저에서 동일한 JS 문법을 사용할 수 있도록 표준화된 언어
+    <ul>
+      <li>예전엔 IE 랑 Chrome 문법이 꽤 많이 달라 애먹었던 기억이😑</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>버전</th>
+      <th>연도</th>
+      <th>특징</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>ES5</strong></td>
+      <td>2009</td>
+      <td><code class="language-plaintext highlighter-rouge">strict mode</code>, JSON 지원</td>
+    </tr>
+    <tr>
+      <td><strong>ES6 (ES2015)</strong></td>
+      <td>2015</td>
+      <td><code class="language-plaintext highlighter-rouge">let/const</code>, 화살표 함수, 클래스, 모듈(<code class="language-plaintext highlighter-rouge">import/export</code>)</td>
+    </tr>
+    <tr>
+      <td><strong>ES2016~현재</strong></td>
+      <td>매년</td>
+      <td>async/await, optional chaining(<code class="language-plaintext highlighter-rouge">?.</code>), nullish coalescing(<code class="language-plaintext highlighter-rouge">??</code>), Array 메서드 추가 등</td>
+    </tr>
+  </tbody>
+</table></div>
+
+  </div>
+
+  <div class="post-tail-wrapper text-muted">
+    <!-- categories -->
+    
+      <div class="post-meta mb-3">
+        <i class="far fa-folder-open fa-fw me-1"></i>
+        
+          <a href="/categories/blogging/">Blogging</a>,
+          <a href="/categories/javascript/">Javascript</a>
+      </div>
+    
+
+    <!-- tags -->
+    
+      <div class="post-tags">
+        <i class="fa fa-tags fa-fw me-1"></i>
+        
+          <a
+            href="/tags/javascript/"
+            class="post-tag no-text-decoration"
+          >Javascript</a>
+        
+      </div>
+    
+
+    <div
+      class="
+        post-tail-bottom
+        d-flex justify-content-between align-items-center mt-5 pb-2
+      "
+    >
+      <div class="license-wrapper">
+        
+          
+
+          This post is licensed under 
+        <a href="https://creativecommons.org/licenses/by/4.0/">
+          CC BY 4.0
+        </a>
+         by the author.
+        
+      </div>
+
+      <!-- Post sharing snippet -->
+
+<div class="share-wrapper d-flex align-items-center">
+  <span class="share-label text-muted">Share</span>
+  <span class="share-icons">
+    
+    
+    
+
+    
+
+      
+
+      <a href="https://twitter.com/intent/tweet?text=JavaScript%20%EB%9E%80%20%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%20-%20Yell's%20Devlog&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fjavascript-001%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+        <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/text-and-typography/" class="post-preview row g-0 flex-md-row-reverse">
-        
+    
 
-        
-          
-          
+      
 
-          
-
-          
-
-          
-
-          <div class="col-md-5">
-            <div class="preview-img "><img data-src="https://cdn.jsdelivr.net/gh/gangnaenge-hi/gangnaenge-hi.github.io/commons/devices-mockup.png" alt="Responsive rendering of Chirpy theme on multiple devices." data-lqip="true" src="data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA"></div>
-          </div>
-
-          
-        
-
-        <div class="col-md-7">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Text and Typography</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>Examples of text, typography, math equations, diagrams, flowcharts, pictures, videos, and more.</p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1565235180"
-  data-df="ll"
-  
->
-  Aug  8, 2019
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Blogging,
-                      Demo
-                  </span>
-                
-              </div>
-
-              
-                <div class="pin ms-1">
-                  <i class="fas fa-thumbtack fa-fw"></i>
-                  <span></span>
-                </div>
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
+      <a href="https://www.facebook.com/sharer/sharer.php?title=JavaScript%20%EB%9E%80%20%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%20-%20Yell's%20Devlog&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fjavascript-001%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+        <i class="fa-fw fab fa-facebook-square"></i>
       </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/customize-the-favicon/" class="post-preview row g-0 flex-md-row-reverse">
-        
+    
 
-        
+      
 
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Customize the Favicon</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>The favicons of Chirpy are placed in the directory assets/img/favicons/. You may want to replace them with your own. The following sections will guide you to create and replace the default favicons...</p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1565454840"
-  data-df="ll"
-  
->
-  Aug 11, 2019
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Blogging,
-                      Tutorial
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
+      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fjavascript-001%2F&text=JavaScript%20%EB%9E%80%20%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%20-%20Yell's%20Devlog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+        <i class="fa-fw fab fa-telegram"></i>
       </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/write-a-new-post/" class="post-preview row g-0 flex-md-row-reverse">
-        
+    
 
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Writing a New Post</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>This tutorial will guide you how to write a post in the Chirpy template, and it’s worth reading even if you’ve used Jekyll before, as many features require specific variables to be set.  Naming and...</p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1565244600"
-  data-df="ll"
-  
->
-  Aug  8, 2019
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Blogging,
-                      Tutorial
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
+    <button
+      id="copy-link"
+      aria-label="Copy link"
+      class="btn small"
+      data-bs-toggle="tooltip"
+      data-bs-placement="top"
+      title="Copy link"
+      data-title-succeed="Link copied successfully!"
+    >
+      <i class="fa-fw fas fa-link pe-none fs-6"></i>
+    </button>
+  </span>
 </div>
-<!-- #post-list -->
 
-
+    </div>
+    <!-- .post-tail-bottom -->
+  </div>
+  <!-- div.post-tail-wrapper -->
+</article>
 
 
             
@@ -1143,12 +1231,234 @@
             </div>
 
             
+              
+              
+
+
+
+
+
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
+
+            
           </aside>
         </div>
 
         <div class="row">
           <!-- tail -->
           <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
+            
+              
+              <!-- Recommend the other 3 posts according to the tags and categories of the current post. -->
+
+<!-- The total size of related posts -->
+
+
+<!-- An random integer that bigger than 0 -->
+
+
+<!-- Equals to TAG_SCORE / {max_categories_hierarchy} -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+
+
+
+
+
+
+
+
+
+
+  <aside id="related-posts" aria-labelledby="related-label">
+    <h3 class="mb-4" id="related-label">Further Reading</h3>
+    <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
+      
+        <article class="col">
+          <a href="/posts/customize-the-favicon/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1565454840"
+  data-df="ll"
+  
+>
+  Aug 11, 2019
+</time>
+
+              <h4 class="pt-0 my-2">Customize the Favicon</h4>
+              <div class="text-muted">
+                <p>The favicons of Chirpy are placed in the directory assets/img/favicons/. You may want to replace them with your own. The following sections will guide you to create and replace the default favicons...</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/getting-started/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1565355300"
+  data-df="ll"
+  
+>
+  Aug  9, 2019
+</time>
+
+              <h4 class="pt-0 my-2">Getting Started</h4>
+              <div class="text-muted">
+                <p>Get started with Chirpy basics in this comprehensive overview. You will learn how to install, configure, and use your first Chirpy-based website, as well as deploy it to a web server.</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/write-a-new-post/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1565244600"
+  data-df="ll"
+  
+>
+  Aug  8, 2019
+</time>
+
+              <h4 class="pt-0 my-2">Writing a New Post</h4>
+              <div class="text-muted">
+                <p>This tutorial will guide you how to write a post in the Chirpy template, and it’s worth reading even if you’ve used Jekyll before, as many features require specific variables to be set.  Naming and...</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+    </nav>
+  </aside>
+  <!-- #related-posts -->
+
+
+            
+              
+              <!-- Navigation buttons at the bottom of the post. -->
+
+<nav class="post-navigation d-flex justify-content-between" aria-label="Post Navigation">
+  
+  
+
+  
+    <a
+      href="/posts/customize-the-favicon/"
+      class="btn btn-outline-primary"
+      aria-label="Older"
+    >
+      <p>Customize the Favicon</p>
+    </a>
+  
+
+  
+    <div class="btn btn-outline-primary disabled" aria-label="Newer">
+      <p>-</p>
+    </div>
+  
+</nav>
+
             
 
             <!-- The Footer -->
@@ -1396,6 +1706,11 @@
     
 
     <!-- Embedded scripts -->
+
+    
+      
+      <!-- The comments switcher -->
+
 
     
 
